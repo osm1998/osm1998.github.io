@@ -345,33 +345,67 @@
    		<div class="col-twelve">
 
             <!-- form -->
-            <form name="contactForm" id="contactForm" action="https://formspree.io/f/mwkgppel" method="POST">
-				<fieldset>
-					<div class="form-field">
-						<input name="name" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
-					</div>
-					<div class="form-field">
-						<input name="_replyto" type="email" id="contactEmail" placeholder="Email" value="" required="">
-					</div>
-					<div class="form-field">
-						<input name="_subject" type="text" id="contactSubject" placeholder="Subject" value="">
-					</div>
-					<div class="form-field">
-						<textarea name="message" id="contactMessage" placeholder="Message" rows="10" cols="50" required=""></textarea>
-					</div>
-					<div class="form-field">
-						<button class="submitform">Submit</button>
-						<div id="submit-loader">
-							<div class="text-loader">Sending...</div>
-							<div class="s-loader">
-								<div class="bounce1"></div>
-								<div class="bounce2"></div>
-								<div class="bounce3"></div>
-							</div>
-						</div>
-					</div>
-				</fieldset>
+            <style>
+				/* Add your own styles here */
+				form {
+					max-width: 600px;
+					margin: 0 auto;
+					padding: 20px;
+					border: 2px solid #ddd;
+					border-radius: 10px;
+				}
+			
+				.form-field {
+					display: flex;
+					flex-direction: column;
+					margin-bottom: 15px;
+				}
+			
+				label {
+					margin-bottom: 5px;
+					font-weight: bold;
+				}
+			
+				input,
+				textarea {
+					width: calc(100% - 10px);
+					padding: 8px;
+					box-sizing: border-box;
+					border: 1px solid #ccc;
+					border-radius: 4px;
+					margin-top: 5px;
+				}
+			
+				button[type="submit"] {
+					background-color: #4caf50;
+					color: white;
+					padding: 10px 15px;
+					border: none;
+					border-radius: 4px;
+					cursor: pointer;
+				}
+			
+				button[type="submit"]:hover {
+					background-color: #45a049;
+				}
+			</style>
+			
+			<form action="https://formspree.io/f/mwkgppel" method="POST">
+				<div class="form-field">
+					<label for="email">Your email:</label>
+					<br>
+					<input type="email" name="email" id="email" required>
+				</div>
+				<div class="form-field">
+					<label for="message">Your message:</label>
+					<br>
+					<textarea name="message" id="message" rows="5" required></textarea>
+				</div>
+				<!-- your other form fields go here -->
+				<button type="submit">Send</button>
 			</form>
+			
+			
 			
 
             <!-- contact-warning -->
